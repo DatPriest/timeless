@@ -18,7 +18,7 @@ namespace MinimalExample
 			if ( IsClient )
 			{
 				RootPanel.SetTemplate( "/minimalhud.html" );
-				RootPanel.StyleSheet.Load( "UI/SandboxHud.scss" );
+				RootPanel.StyleSheet.Load( "UI/Health.scss" );
 				RootPanel.Add.Panel( "healthBack" );
 				RootPanel.AddChild<NameTags>();
 				RootPanel.AddChild<ChatBox>();
