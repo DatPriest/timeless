@@ -1,4 +1,6 @@
 ﻿using Sandbox.UI;
+using Sandbox;
+using timeless;
 
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
@@ -16,6 +18,13 @@ namespace MinimalExample
 			if ( IsClient )
 			{
 				RootPanel.SetTemplate( "/minimalhud.html" );
+				RootPanel.StyleSheet.Load( "UI/SandboxHud.scss" );
+				RootPanel.Add.Panel( "healthBack" );
+				RootPanel.AddChild<NameTags>();
+				RootPanel.AddChild<ChatBox>();
+				RootPanel.AddChild<Health>();
+				Log.Error( Health.ToString() );
+
 			}
 		}
 	}

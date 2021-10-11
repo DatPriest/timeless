@@ -6,10 +6,11 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
+		
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
-
+			this.Health = 100;
 			//
 			// Use WalkController for movement (you can make your own PlayerController for 100% control)
 			//
@@ -25,11 +26,11 @@ namespace MinimalExample
 			//
 			Camera = new ThirdPersonCamera();
 
+
 			EnableAllCollisions = true;
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
-
 			base.Respawn();
 		}
 

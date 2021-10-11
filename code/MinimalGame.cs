@@ -20,6 +20,7 @@ namespace MinimalExample
 	/// </summary>
 	public partial class MinimalGame : Sandbox.Game
 	{
+		public MinimalHudEntity hudEntity;
 		public MinimalGame()
 		{
 			if ( IsServer )
@@ -30,13 +31,22 @@ namespace MinimalExample
 				// and when it is created clientside it creates the actual
 				// UI panels. You don't have to create your HUD via an entity,
 				// this just feels like a nice neat way to do it.
-				new MinimalHudEntity();
+				hudEntity = new MinimalHudEntity();
 			}
 
 			if ( IsClient )
 			{
 				Log.Info( "My Gamemode Has Created Clientside!" );
+				hudEntity = new();
 			}
+		}
+
+		[Event.Hotload]
+		public void HotLoadUpdate()
+		{
+			if ( !IsClient ) return;
+			hudEntity?.Delete();
+			hudEntity = new();
 		}
 
 		/// <summary>
