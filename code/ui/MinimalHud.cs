@@ -15,17 +15,16 @@ namespace MinimalExample
 	{
 		public MinimalHudEntity()
 		{
-			if ( IsClient )
-			{
-				RootPanel.SetTemplate( "/minimalhud.html" );
-				RootPanel.StyleSheet.Load( "UI/Health.scss" );
-				RootPanel.Add.Panel( "healthBack" );
-				RootPanel.AddChild<NameTags>();
-				RootPanel.AddChild<ChatBox>();
-				RootPanel.AddChild<Health>();
-				Log.Error( Health.ToString() );
+			if ( !IsClient ) return;
+			
+			RootPanel.StyleSheet.Load( "/ui/Health.scss" );
+			//RootPanel.Add.Panel( "healthBack" );
+			RootPanel.AddChild<NameTags>();
+			RootPanel.AddChild<ChatBox>();
+			RootPanel.AddChild<Health>();
+			Log.Error( Health.ToString() );
 
-			}
+			
 		}
 	}
 
