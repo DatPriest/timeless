@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
-namespace MinimalExample
+namespace timeless
 {
 
 	/// <summary>
@@ -21,6 +21,7 @@ namespace MinimalExample
 	public partial class MinimalGame : Sandbox.Game
 	{
 		public MinimalHudEntity hudEntity;
+		public float t;
 		public MinimalGame()
 		{
 			if ( IsServer )
@@ -47,6 +48,7 @@ namespace MinimalExample
 			if ( !IsClient ) return;
 			hudEntity?.Delete();
 			hudEntity = new();
+
 		}
 
 		/// <summary>

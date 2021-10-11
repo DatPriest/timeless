@@ -5,7 +5,7 @@ using timeless;
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
-namespace MinimalExample
+namespace timeless
 {
 	/// <summary>
 	/// This is the HUD entity. It creates a RootPanel clientside, which can be accessed
@@ -18,11 +18,12 @@ namespace MinimalExample
 			if ( !IsClient ) return;
 			
 			RootPanel.StyleSheet.Load( "/ui/Health.scss" );
-			//RootPanel.Add.Panel( "healthBack" );
+			RootPanel.Add.Panel( "healthBack" );
 			RootPanel.AddChild<NameTags>();
 			RootPanel.AddChild<ChatBox>();
 			RootPanel.AddChild<Health>();
-			Log.Error( Health.ToString() );
+			//RootPanel.Add.Panel( "bar" );
+			Log.Error( $"Health: {Local.Pawn.Health}" );
 
 			
 		}

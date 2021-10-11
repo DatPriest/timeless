@@ -2,15 +2,17 @@
 using System;
 using System.Linq;
 
-namespace MinimalExample
+namespace timeless
 {
 	partial class MinimalPlayer : Player
 	{
-		
+		public TimeSince since;
+
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
-			this.Health = 100;
+			Health = 100;
+			Log.Info( $"Health setted to {Health}" );
 			//
 			// Use WalkController for movement (you can make your own PlayerController for 100% control)
 			//

@@ -11,20 +11,36 @@ namespace timeless
 {
 	public class Health : Panel
 	{
-		public Label label;
+		public Label health;
+		private Panel HealthBar;
 
 		public Health()
 		{
 			StyleSheet.Load( "/ui/Health.scss" );
-			label = Add.Label( "100", "value" );
+			Panel healthBack = Add.Panel( "healthBack" );
+			Panel healthBarBack = healthBack.Add.Panel( "healthBarBack" );
+			HealthBar = healthBarBack.Add.Panel( "healthBar" );
+
+			health = healthBack.Add.Label( "0", "healthText" );
 		}
 
 		public override void Tick()
 		{
 			var player = Local.Pawn;
-			if ( player != null ) return;
 
-			label.Text = $"{player.Health.CeilToInt()}";
+			base.Tick();
+
+			if ( player == null ) return;
+
+			if ( player is MinimalPlayer)
+			{
+				player.Health - Time.
+			}
+
+			health.Text = $"{player.Health.CeilToInt()}";
+			HealthBar.Style.Dirty();
+			HealthBar.Style.Width = Length.Percent( player.Health );
+
 			
 		}
 	}
