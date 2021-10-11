@@ -34,7 +34,8 @@ namespace timeless
 
 			if ( player is MinimalPlayer)
 			{
-				player.Health - Time.
+				var x  = (MinimalPlayer) player;
+				player.Health = x.since;
 			}
 
 			health.Text = $"{player.Health.CeilToInt()}";
