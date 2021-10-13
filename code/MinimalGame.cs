@@ -6,8 +6,6 @@ using System.IO;
 using System.Threading.Tasks;
 
 //
-// Test Push2
-// Test Push3
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
 namespace timeless
