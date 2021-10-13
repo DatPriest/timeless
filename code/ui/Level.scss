@@ -1,0 +1,50 @@
+﻿.levelBarBack {
+    width: 500px;
+    height: 10px;
+    margin-top: 20px;
+    background-color: #212121;
+    margin-left:10px;
+    
+}
+
+.levelBar {
+    width: 50%;
+    background-color: #e74c3c;
+}
+
+
+.levelText {
+    margin-left: 10px;
+    margin-right: 5px;
+    color: #e74c3c;
+    text-shadow: 0 0 1px black;
+    font-weight: bold;
+}
+
+.experience {
+    margin-left: 400px;
+    margin-right: 5px;
+    color: #e74c3c;
+    text-shadow: 0 0 1px black;
+    font-weight: bold;
+}
+
+.experienceToNextLevel {
+    margin-left: 50px;
+    margin-right: 5px;
+    color: #e74c3c;
+    text-shadow: 0 0 1px black;
+    font-weight: bold;
+}
+
+text.title {
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    text-shadow: 5px 5px 50px rgba( black, 0.8 );
+    background-color: red;
+}

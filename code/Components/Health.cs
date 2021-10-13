@@ -7,7 +7,7 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 
-namespace timeless
+namespace timeless.Components
 {
 	public class Health : Panel
 	{
@@ -32,16 +32,15 @@ namespace timeless
 
 			if ( player == null ) return;
 
-			if ( player is MinimalPlayer)
+			if ( player is BasePlayer )
 			{
-				var x  = (MinimalPlayer) player;
-				player.Health = x.since;
+				player = (BasePlayer)player;
+			
+
+				health.Text = $"{player.Health.CeilToInt()}";
+				HealthBar.Style.Dirty();
+				HealthBar.Style.Width = Length.Percent( player.Health );
 			}
-
-			health.Text = $"{player.Health.CeilToInt()}";
-			HealthBar.Style.Dirty();
-			HealthBar.Style.Width = Length.Percent( player.Health );
-
 			
 		}
 	}

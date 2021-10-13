@@ -1,6 +1,7 @@
 ﻿using Sandbox.UI;
 using Sandbox;
 using timeless;
+using timeless.Components;
 
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
@@ -17,15 +18,10 @@ namespace timeless
 		{
 			if ( !IsClient ) return;
 			
-			RootPanel.StyleSheet.Load( "/ui/Health.scss" );
-			RootPanel.Add.Panel( "healthBack" );
 			RootPanel.AddChild<NameTags>();
 			RootPanel.AddChild<ChatBox>();
 			RootPanel.AddChild<Health>();
-			//RootPanel.Add.Panel( "bar" );
-			Log.Error( $"Health: {Local.Pawn.Health}" );
-
-			
+			RootPanel.AddChild<Level>();
 		}
 	}
 
