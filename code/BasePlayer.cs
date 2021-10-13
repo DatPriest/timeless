@@ -11,14 +11,11 @@ namespace timeless
 	{
 		public const int MaxHealth = 250;
 		public TimeSince time;
-		public int Level { get; set; } = 1;
-		public float Experience { get; set; } = 0;
-		public float ExperienceActualLevel { get; set; } = 0;
-		public float ExperienceToNextLevel { get; set; } = 150;
 		public BaseInventory inventory;
 		public Currency Currency { get; set; }
 		public Job Job { get; set; }
 		public new Health Health { get; set; }
+		public new Level Level { get; set; }
 
 		public BasePlayer()
 		{
