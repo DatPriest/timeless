@@ -5,6 +5,8 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
+using timeless.ui;
+
 //
 // Test Push2
 // Test Push3
@@ -50,7 +52,6 @@ namespace timeless
 			if ( !IsClient ) return;
 			hudEntity?.Delete();
 			hudEntity = new();
-
 		}
 
 		/// <summary>

@@ -6,7 +6,7 @@ using timeless.Components;
 //
 // You don't need to put things in a namespace, but it doesn't hurt.
 //
-namespace timeless
+namespace timeless.ui
 {
 	/// <summary>
 	/// This is the HUD entity. It creates a RootPanel clientside, which can be accessed
@@ -20,7 +20,7 @@ namespace timeless
 			
 			RootPanel.AddChild<NameTags>();
 			RootPanel.AddChild<ChatBox>();
-			RootPanel.AddChild<Health>();
+			RootPanel.AddChild<HealthUI>();
 			RootPanel.AddChild<Level>();
 		}
 	}

@@ -17,7 +17,8 @@ namespace timeless
 		public float ExperienceToNextLevel { get; set; } = 150;
 		public BaseInventory inventory;
 		public Currency Currency { get; set; }
-		public Job Job {  get; set; }
+		public Job Job { get; set; }
+		public new Health Health { get; set; }
 
 		public BasePlayer()
 		{
@@ -28,8 +29,7 @@ namespace timeless
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
-
-			Health = MaxHealth;
+			Health = new();
 			//
 			// Use WalkController for movement (you can make your own PlayerController for 100% control)
 			//
@@ -83,6 +83,8 @@ namespace timeless
 			{
 				BasePlayer player = (BasePlayer)Local.Pawn;
 				player.Experience++;
+				player.ExperienceActualLevel++;
+
 			}
 		}
 

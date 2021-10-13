@@ -9,9 +9,9 @@ namespace timeless.Components
 	public class Job
 	{
 		public string JobName {  get; set; }
-		public string JobVersion {  get; set; }	
-		public string JobDescription {  get; set; }	
-		public string JobStatus {  get; set; }	
+		public string JobVersion {  get; set; }
+		public string JobDescription {  get; set; }
+		public string JobStatus {  get; set; }
 
 		public Job()
 		{

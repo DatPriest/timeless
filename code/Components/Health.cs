@@ -9,39 +9,15 @@ using Sandbox.UI.Construct;
 
 namespace timeless.Components
 {
-	public class Health : Panel
+	public class Health
 	{
-		public Label health;
-		private Panel HealthBar;
+		public float MaxHealth { get; set; } = 250;
+		public float Amount {  get; set; }
 
 		public Health()
 		{
-			StyleSheet.Load( "/ui/Health.scss" );
-			Panel healthBack = Add.Panel( "healthBack" );
-			Panel healthBarBack = healthBack.Add.Panel( "healthBarBack" );
-			HealthBar = healthBarBack.Add.Panel( "healthBar" );
-
-			health = healthBack.Add.Label( "0", "healthText" );
+			Amount = MaxHealth;
 		}
 
-		public override void Tick()
-		{
-			var player = Local.Pawn;
-
-			base.Tick();
-
-			if ( player == null ) return;
-
-			if ( player is BasePlayer )
-			{
-				player = (BasePlayer)player;
-			
-
-				health.Text = $"{player.Health.CeilToInt()}";
-				HealthBar.Style.Dirty();
-				HealthBar.Style.Width = Length.Percent( player.Health );
-			}
-			
-		}
 	}
 }
