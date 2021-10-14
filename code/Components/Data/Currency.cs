@@ -7,13 +7,13 @@ using Sandbox.UI;
 using Sandbox.UI.Construct;
 using Sandbox;
 
-namespace timeless.Components
+namespace timeless.Components.Data
 {
 	public class Currency
 	{
 		public float Amount { get; set; }
 		public string CurrencyName { get; set; }
-		private BasePlayer Player {  get; set; }
+		public BasePlayer Player {  get; set; }
 		public Currency(BasePlayer player) 
 		{
 			Player = player;

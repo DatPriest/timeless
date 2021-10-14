@@ -7,7 +7,7 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 
-namespace timeless.UI
+namespace timeless.ui
 {
 	public class LevelUI : Panel
 	{
@@ -39,19 +39,20 @@ namespace timeless.UI
 			if (entity is BasePlayer)
 			{
 				BasePlayer player = (BasePlayer)entity;
-				player.Level = 1;
+				if ( player.Level == null ) return;
 
-				if (player.Experience >= player.ExperienceToNextLevel)
+
+				if (player.Level.Experience >= player.Level.ExperienceToNextLevel)
 				{
-					player.Level++;
-					CalculateExperience(player);
+					player.Level.LevelAmount++;
+					player.Level.CalculateExperience();
 				}
 
-				level.Text = $"{player.Level}";
-				experience.Text = $"{player.Experience}";
-				experienceToNextLevel.Text = $"{player.ExperienceToNextLevel}";
+				level.Text = $"{player.Level.LevelAmount}";
+				experience.Text = $"{player.Level.Experience}";
+				experienceToNextLevel.Text = $"{player.Level.ExperienceToNextLevel}";
 				LevelBar.Style.Dirty();
-				LevelBar.Style.Width = Length.Percent((player.ExperienceActualLevel / player.ExperienceToNextLevel) * 100);
+				LevelBar.Style.Width = Length.Percent((player.Level.ExperienceActualLevel / player.Level.ExperienceToNextLevel) * 100);
 			}
 		}
 	}

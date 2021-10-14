@@ -7,7 +7,7 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 
-namespace timeless.Components
+namespace timeless.Components.Data
 {
 	public class Health
 	{

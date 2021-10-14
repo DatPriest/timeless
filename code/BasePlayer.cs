@@ -4,6 +4,7 @@ using System.Linq;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using timeless.Components;
+using timeless.Components.Data;
 
 namespace timeless
 {
@@ -15,16 +16,20 @@ namespace timeless
 		public Currency Currency { get; set; }
 		public Job Job { get; set; }
 		public new Health Health { get; set; }
-		public new Level Level { get; set; }
+		public Level Level { get; set; }
+		public Steamworks.SteamId steamId;
 
 		public BasePlayer()
 		{
 			Currency = new Currency(this);
 			inventory = new BaseInventory(this);
+			Level = new Level(this);
 		}
 
 		public override void Respawn()
 		{
+			if ( Level == null ) Level = new(this); 
+
 			SetModel( "models/citizen/citizen.vmdl" );
 			Health = new();
 			//
@@ -79,8 +84,8 @@ namespace timeless
 			if (IsClient && Input.Pressed( InputButton.Attack1 ))
 			{
 				BasePlayer player = (BasePlayer)Local.Pawn;
-				player.Experience++;
-				player.ExperienceActualLevel++;
+				player.Level.Experience++;
+				player.Level.ExperienceActualLevel++;
 
 			}
 		}

@@ -7,7 +7,7 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 
-namespace timeless.Components
+namespace timeless.Components.Data
 {
 	public class Level
 	{
@@ -15,11 +15,19 @@ namespace timeless.Components
 		public float Experience { get; set; } = 0;
 		public float ExperienceActualLevel { get; set; } = 0;
 		public float ExperienceToNextLevel { get; set; } = 150;
+		public BasePlayer Player { get; set; }
 
-		public void CalculateExperience(BasePlayer player )
+		public Level(BasePlayer player)
 		{
-			player.ExperienceActualLevel = 0;
-			player.ExperienceToNextLevel = (float)(player.ExperienceToNextLevel * 1.01 + 150);
+			Experience = 0;
+			Player = player;
+			LevelAmount = 0;
+		}
+
+		public void CalculateExperience()
+		{
+			ExperienceActualLevel = 0;
+			ExperienceToNextLevel = (float)ExperienceToNextLevel * 1.01f + 150;
 		}
 	}
 }

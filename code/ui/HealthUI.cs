@@ -38,7 +38,6 @@ namespace timeless.ui
 			{
 				player = (BasePlayer)player;
 
-
 				health.Text = $"{player.Health.CeilToInt()}";
 				HealthBar.Style.Dirty();
 				HealthBar.Style.Width = Length.Percent( player.Health );

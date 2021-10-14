@@ -21,7 +21,7 @@ namespace timeless.ui
 			RootPanel.AddChild<NameTags>();
 			RootPanel.AddChild<ChatBox>();
 			RootPanel.AddChild<HealthUI>();
-			RootPanel.AddChild<Level>();
+			RootPanel.AddChild<LevelUI>();
 		}
 	}
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace timeless.Components
+namespace timeless.Components.Data
 {
 	public class Job
 	{
