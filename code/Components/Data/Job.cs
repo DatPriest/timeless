@@ -13,9 +13,23 @@ namespace timeless.Components.Data
 		public string JobDescription {  get; set; }
 		public string JobStatus {  get; set; }
 
+		public static Job BaseJob = new Job
+		{
+			JobName = "Civilian",
+			JobVersion = "1.0",
+			JobDescription = "A default Civilian",
+			JobStatus = "Active",
+
+		};
+
 		public Job()
 		{
 
+		}
+
+		public static Job GetLastJob()
+		{
+			return BaseJob;
 		}
 	}
 }

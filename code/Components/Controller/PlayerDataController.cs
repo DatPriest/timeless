@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Sandbox;
 using timeless.Components.Data;
-/*using Microsoft.EntityFrameworkCore;
-using MySql.EntityFrameworkCore.Extensions;
-using MySql.Data;*/
-using System.Net;
+//using System.Net;
+
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Sandbox.Internal;
 
 namespace timeless.Components.Controller
 {
@@ -19,6 +18,8 @@ namespace timeless.Components.Controller
 
 		public static void InsertData( BasePlayer player )
 		{
+			//new Http( new Uri( "127.0.0.1:8000/v1/player/data" ) ).GetStringAsync();
+			/*
 			HttpWebRequest request =( HttpWebRequest)WebRequest
 				.Create("localhost:8000/v1/player/data");
 			request.Method = "POST";

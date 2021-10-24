@@ -1,0 +1,40 @@
+﻿.playerInfoBack {
+    background-color: green;
+    left: 50px;
+    bottom: 20px;
+    padding: 5px;
+    position: center;
+    width: 50px;
+}
+
+.playerInfoBacktest {
+    width: 25px;
+    height: 400px;
+    background-color:lightgray;
+}
+
+.playerInfo {
+    width: 100%;
+    background-color: red;
+}
+
+
+
+.healthBack {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    padding: 5px;
+    background-color: #323232;
+}
+
+.healthBarBack {
+    width: 250px;
+    background-color: #212121;
+}
+
+.healthBar {
+    width: 50%;
+    background-color: #e74c3c;
+}
+

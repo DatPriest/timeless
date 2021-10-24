@@ -9,7 +9,7 @@ using Sandbox.UI.Construct;
 
 
 
-namespace timeless.ui
+namespace timeless.UI
 {
 	public class HealthUI : Panel
 	{

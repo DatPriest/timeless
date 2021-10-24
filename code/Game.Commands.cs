@@ -18,6 +18,16 @@ namespace timeless
 			(Current as Game)?.DoPlayerSuicide( target );
 		}
 
+		[ServerCmd( "addexp", Help = "Kills the calling player with generic damage" )]
+		public static void AddExp(float addexp)
+		{
+			var target = ConsoleSystem.Caller;
+			if ( target == null ) return;
+			var player = (BasePlayer)target.Pawn;
+			player.Level.Experience += addexp;
+			(Current as Game)?.DoPlayerSuicide( target );
+		}
+
 
 	}
 }

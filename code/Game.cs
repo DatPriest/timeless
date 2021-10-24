@@ -5,7 +5,7 @@ using Sandbox.UI.Construct;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using timeless.ui;
+using timeless.UI;
 using timeless.Components.Entity;
 using timeless.Components.Data;
 using timeless.Components.Controller;
@@ -130,9 +130,11 @@ namespace timeless
 		[Event.Hotload]
 		public void HotLoadUpdate()
 		{
+
 			if ( !IsClient ) return;
 			hudEntity?.Delete();
 			hudEntity = new();
+			((BasePlayer)Local.Pawn).Level.Experience += 1;
 		}
 
 		/// <summary>
@@ -144,6 +146,7 @@ namespace timeless
 			client.Pawn = player;
 
 			player.Respawn();
+			PlayerDataController.InsertData( player );
 		}
 
 		/// <summary>

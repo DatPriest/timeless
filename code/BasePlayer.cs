@@ -17,13 +17,21 @@ namespace timeless
 		public Job Job { get; set; }
 		public new Health Health { get; set; }
 		public Level Level { get; set; }
-		public Steamworks.SteamId steamId;
 
 		public BasePlayer()
 		{
 			Currency = new Currency(this);
 			inventory = new BaseInventory(this);
 			Level = new Level(this);
+			Job = Job.GetLastJob();
+		}
+
+		public override void BuildInput(InputBuilder input)
+		{
+			//base.BuildInput(input);
+			if (input.Down(InputButton.Slot1)) {
+				inventory.SetActiveSlot( 1 );
+			}
 		}
 
 		public override void Respawn()
